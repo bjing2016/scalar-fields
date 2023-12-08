@@ -1,6 +1,6 @@
 # ESF&mdash;Equivariant Scalar Fields
 
-Implementation of [Equivariant Scalar Fields for Molecular Docking with Fast Fourier Transforms]() by Bowen Jing, Tommi Jaakkola, Bonnie Berger.
+Implementation of [Equivariant Scalar Fields for Molecular Docking with Fast Fourier Transforms](https://arxiv.org/abs/2312.04323) by Bowen Jing, Tommi Jaakkola, Bonnie Berger.
 
 ESF is an ML-based ligand pose scoring function designed for rapid optimization over rigid-body degrees of freedom. The scoring function is the cross-correlation of multi-channel ligand and protein scalar fields parameterized by equivariant graph neural networks. These cross-correlations can be rapidly evaluated over the space of translations or rotations with Fast Fourier Transforms (FFT), enabling the score to be immediately maximized over either degree of freedom without optimization or sampling algorithms.
 
@@ -102,3 +102,15 @@ To retrain the ESF-N model:
 python train_pl.py --num_rbf 5 --rbf_max 5 --mode mixed --rot_noise 0.2 --tr_noise 0.7 --all_atoms --run_name ESF_N
 ```
 Both models are trained for 10 epochs on a single GPU.
+
+## Citation
+```
+@misc{jing2023equivariant,
+      title={Equivariant Scalar Fields for Molecular Docking with Fast Fourier Transforms}, 
+      author={Bowen Jing and Tommi Jaakkola and Bonnie Berger},
+      year={2023},
+      eprint={2312.04323},
+      archivePrefix={arXiv},
+      primaryClass={q-bio.BM}
+}
+```
